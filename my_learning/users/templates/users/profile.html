@@ -8,15 +8,14 @@
 
 <h1>User info</h1>
   {% if user.is_authenticated %}
-    <h2>Detail</h2>
     <p>Username: {{ user.username }}</p>
     <p>First name: {{ user.first_name }}</p>
     <p>Last name: {{ user.last_name }}</p>
     <p>Email: {{ user.email }}</p>
     <p>Phone: {{ user.userprofile.phone_number }}</p>
+    <p>Лицевой счет: {{ user.userprofile.personal_account }}</p>
   {% else %}
     <h2>User is anonymous</h2>
   {% endif %}
-
 
  {% endblock %}

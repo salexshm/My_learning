@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Чек</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            width: 80mm; /* Ширина чека для термопринтера */
+            margin: 0;
+        }
+        .receipt {
+            padding: 10px;
+            border: 1px dashed black;
+        }
+        .header, .footer {
+            text-align: center;
+        }
+        .items {
+            margin-top: 20px;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+        }
+        .total {
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="receipt">
+        <div class="header">
+            <h2>Название компании</h2>
+            <p>Адрес компании</p>
+            <p>Телефон: +7 (123) 456-78-90</p>
+        </div>
+        <hr>
+        <div class="items">
+            {% for item in items %}
+            <div class="item">
+                <span>{{ item.name }}</span>
+                <span>{{ item.quantity }} x {{ item.price }} = {{ item.total }}</span>
+            </div>
+            {% endfor %}
+        </div>
+        <hr>
+        <div class="total">
+            Итого: {{ total }}
+        </div>
+        <hr>
+        <div class="footer">
+            <p>Спасибо за покупку!</p>
+        </div>
+    </div>
+</body>
+</html>

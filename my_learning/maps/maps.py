@@ -21,8 +21,8 @@ def index():
         [42.329212, 69.608599]  # Маделикожа
     ]
 
-    # for point in coordinates:
-    #     folium.Marker(point).add_to(map_object)
+    for point in coordinates:
+        folium.Marker(point).add_to(map_object)
 
     # Рисуем линию между точками
     folium.PolyLine(coordinates, color="blue", weight=2.5).add_to(map_object)
